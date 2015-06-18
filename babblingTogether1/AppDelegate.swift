@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.setApplicationId("AI5jpxBt0dTeKGHcGZZh1uTedKycxLoKwwX7Og8O", clientKey: "wGP4rk25MIqb7t1lLbMOLqWUoIkuUuoTpZsPe4v0")
-        //PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
         FBSDKLoginButton.accessibilityActivate()
         return true
     }
