@@ -28,6 +28,21 @@ class LoginWiewController: UIViewController {
 
     }
 
+    @IBAction func buttonLogInWithEmailTapped(sender: AnyObject) {
+        
+        PFUser.logInWithUsernameInBackground(self.emailTextField.text, password: self.passwordTextField.text){
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil{
+                self.errorLabel.hidden = false;
+                self.errorLabel.textColor = UIColor.blueColor();
+                self.errorLabel.text = "You have been logged in!";
+            } else {
+                self.errorLabel.hidden = false;
+                self.errorLabel.textColor = UIColor.redColor();
+                self.errorLabel.text = "Either your password or email is not correct!";
+            }
+        }
+    }
     
     @IBAction func buttonLoginWithTwitterTapped(sender: AnyObject) {
         
