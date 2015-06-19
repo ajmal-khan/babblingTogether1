@@ -14,9 +14,8 @@ class LoginWiewController: UIViewController {
 
     
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var errorLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,9 @@ class LoginWiewController: UIViewController {
         //if ([FBSDKAccessToken currentAccessToken]) {
             // User is logged in, do work such as go to next view controller.
         //}
-        
+        //self.errorLabel
+        self.errorLabel.hidden = true;
+
     }
 
     
@@ -52,20 +53,24 @@ class LoginWiewController: UIViewController {
         var newUser = PFUser();
         newUser.username = self.emailTextField.text;
         newUser.password = self.passwordTextField.text;
-        newUser.email = self.emailTextField.text;
+        //newUser.email = self.emailTextField.text;
         newUser.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error{
                 let errorString = error.userInfo?["error"] as? NSString;
                 //show the errorString somewhere and let the user try again.
-                println(errorString);
-                self.emailTextField.textColor = UIColor.redColor();
-                self.emailTextField.text = "Email already taken!";
+                //println(errorString);
+                self.errorLabel.hidden = false;
+                self.errorLabel.textColor = UIColor.redColor();
+                self.errorLabel.text = "Email already taken!";
             } else{
-                println("You have successfully signed up. An account was made for you.");
+                self.errorLabel.hidden = false;
+                self.errorLabel.textColor = UIColor.greenColor();
+                self.errorLabel.text = "Congritualtions! You can use the app now!";
+                //println("You have successfully signed up. An account was made for you.");
                 //Success, let them use the app now! Let them go to the next navigation controller.
             }
-        }
+        }//@
         
     }//function buttonSignUpTapped ends here.
     
