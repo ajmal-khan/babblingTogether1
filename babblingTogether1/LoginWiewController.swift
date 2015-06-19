@@ -12,7 +12,10 @@ import Foundation
 
 class LoginWiewController: UIViewController {
 
-    
+
+    @IBOutlet weak var buttonLoginWithEmail: UIButton!
+    @IBOutlet weak var buttonLogOut: UIButton!
+    @IBOutlet weak var buttonSignUp: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -23,12 +26,50 @@ class LoginWiewController: UIViewController {
         //if ([FBSDKAccessToken currentAccessToken]) {
             // User is logged in, do work such as go to next view controller.
         //}
-        //self.errorLabel
-        self.errorLabel.hidden = true;
-
+        
+        doStartUpWork();
+        
+    }//function viewDidLoad ends here.
+    
+    func doStartUpWork(){
+        
+        var currentUser = PFUser.currentUser();
+        if currentUser != nil{
+            // Let the user go on to the next view controller.
+            self.errorLabel.hidden = false;
+            self.errorLabel.textColor = UIColor.purpleColor();
+            self.errorLabel.text = "You are already logged in on this device.";
+            self.buttonLoginWithEmail.hidden = true;
+            self.buttonSignUp.hidden = true;
+            self.emailTextField.hidden = true;
+            self.passwordTextField.hidden = true;
+            self.buttonLogOut.hidden = false;
+        }
+        else{
+            //Show the sign up or log in screen.
+            self.buttonLogOut.hidden = true;
+            self.buttonSignUp.hidden = false;
+            self.buttonLoginWithEmail.hidden = false;
+            self.emailTextField.text = "";
+            self.emailTextField.hidden = false;
+            self.passwordTextField.text = "";
+            self.passwordTextField.hidden = false;
+            self.errorLabel.hidden = true;//As there is no error now.
+        }
+        
+    }//function doStartUpWork ends here
+    
+    
+    @IBAction func buttonLogOutTapped(sender: AnyObject) {
+        PFUser.logOut();
+        self.emailTextField.text = "";
+        self.passwordTextField.text = "";
+        doStartUpWork();
+        //var currentUser = PFUser.currentUser();
     }
 
-    @IBAction func buttonLogInWithEmailTapped(sender: AnyObject) {
+    
+    @IBAction func buttonLoginWithEmailTapped(sender: AnyObject) {
         
         PFUser.logInWithUsernameInBackground(self.emailTextField.text, password: self.passwordTextField.text){
             (user: PFUser?, error: NSError?) -> Void in
@@ -36,13 +77,20 @@ class LoginWiewController: UIViewController {
                 self.errorLabel.hidden = false;
                 self.errorLabel.textColor = UIColor.blueColor();
                 self.errorLabel.text = "You have been logged in!";
+                self.buttonLoginWithEmail.hidden = true;
+                self.buttonLogOut.hidden = false;
+                self.buttonSignUp.hidden = true;
+                self.emailTextField.text = "";
+                self.emailTextField.hidden = true;
+                self.passwordTextField.text = "";
+                self.passwordTextField.hidden = true;
             } else {
                 self.errorLabel.hidden = false;
                 self.errorLabel.textColor = UIColor.redColor();
                 self.errorLabel.text = "Either your password or email is not correct!";
             }
         }
-    }
+    }//function buttonLoginWithEmailTapped ends here.
     
     @IBAction func buttonLoginWithTwitterTapped(sender: AnyObject) {
         
@@ -52,12 +100,12 @@ class LoginWiewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 if user.isNew {
-                    println("User signed up and logged in with Twitter!")
+                    //println("User signed up and logged in with Twitter!")
                 } else {
-                    println("User logged in with Twitter!")
+                    //println("User logged in with Twitter!")
                 }
             } else {
-                println("Uh oh. The user cancelled the Twitter login.")
+                //println("Uh oh. The user cancelled the Twitter login.")
             }
         }
         
