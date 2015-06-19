@@ -26,9 +26,12 @@
                                     <action selector="buttonLoginWithTwitterTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emF-5A-WVK"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2P-h9-Oc2" customClass="FBSDKLoginButton">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2P-h9-Oc2" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="163" y="317" width="213" height="72"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="hMX-22-rYd"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sign up with email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8c9-qe-Q4P">
                                 <rect key="frame" x="222" y="69" width="141" height="21"/>
@@ -84,12 +87,14 @@
                             <constraint firstAttribute="trailing" secondItem="2zj-21-WyG" secondAttribute="trailing" constant="5" id="BgU-Lt-hzr"/>
                             <constraint firstAttribute="trailing" secondItem="pTE-Jw-UgG" secondAttribute="trailing" id="BoM-pG-mCg"/>
                             <constraint firstItem="pTE-Jw-UgG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="D0d-dW-TrX"/>
+                            <constraint firstItem="C2P-h9-Oc2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="QgF-i8-jbm"/>
                             <constraint firstItem="IzX-S7-sDt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ShZ-OZ-w6s"/>
                             <constraint firstItem="2zj-21-WyG" firstAttribute="top" secondItem="8c9-qe-Q4P" secondAttribute="bottom" constant="15" id="WWu-Mg-l2J"/>
                             <constraint firstItem="8c9-qe-Q4P" firstAttribute="top" secondItem="pTE-Jw-UgG" secondAttribute="bottom" constant="25" id="YIm-Jh-Uxy"/>
                             <constraint firstItem="8c9-qe-Q4P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="aLf-qp-The"/>
                             <constraint firstAttribute="trailing" secondItem="Zqr-FE-BpT" secondAttribute="trailing" constant="5" id="bvN-hx-opK"/>
                             <constraint firstItem="C2P-h9-Oc2" firstAttribute="top" secondItem="IzX-S7-sDt" secondAttribute="bottom" constant="30" id="bvc-2M-iXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="C2P-h9-Oc2" secondAttribute="trailing" constant="5" id="e5S-F0-4Fn"/>
                             <constraint firstItem="pTE-Jw-UgG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="erq-n9-HKR"/>
                             <constraint firstItem="CS6-mI-lWE" firstAttribute="top" secondItem="2zj-21-WyG" secondAttribute="bottom" constant="20" id="gxf-7K-TPc"/>
                             <constraint firstAttribute="trailing" secondItem="CS6-mI-lWE" secondAttribute="trailing" constant="5" id="m5P-rU-orq"/>

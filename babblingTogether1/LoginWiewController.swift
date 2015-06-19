@@ -121,3 +121,16 @@ App Secret:
 72748d6d411b71cb897f00d226feecaa
 
 */
+
+/*
+git instructions:
+
+Ajmal-Khans-Macbook-Pro-Retina:babblingTogether1 macbookproretina$ git add .
+
+Ajmal-Khans-Macbook-Pro-Retina:babblingTogether1 macbookproretina$ git commit -m "Added error lable so that error is shown in case the email is already taken."
+
+Ajmal-Khans-Macbook-Pro-Retina:babblingTogether1 macbookproretina$ git push origin master
+
+Ajmal-Khans-Macbook-Pro-Retina:babblingTogether1 macbookproretina$ git status
+
+*/
