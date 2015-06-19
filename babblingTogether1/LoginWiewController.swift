@@ -13,7 +13,11 @@ import Foundation
 class LoginWiewController: UIViewController {
 
     
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +46,28 @@ class LoginWiewController: UIViewController {
         }
         
     }//function buttonLoginWithTwitterTapped ends here.
+    
+    @IBAction func buttonSignUpTapped(sender: AnyObject) {
+        
+        var newUser = PFUser();
+        newUser.username = self.emailTextField.text;
+        newUser.password = self.passwordTextField.text;
+        newUser.email = self.emailTextField.text;
+        newUser.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error{
+                let errorString = error.userInfo?["error"] as? NSString;
+                //show the errorString somewhere and let the user try again.
+                println(errorString);
+                self.emailTextField.textColor = UIColor.redColor();
+                self.emailTextField.text = "Email already taken!";
+            } else{
+                println("You have successfully signed up. An account was made for you.");
+                //Success, let them use the app now! Let them go to the next navigation controller.
+            }
+        }
+        
+    }//function buttonSignUpTapped ends here.
     
 }//class LoginWiewController ends here.
 

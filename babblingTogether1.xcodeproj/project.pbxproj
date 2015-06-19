@@ -32,8 +32,8 @@
 		76021EF01B33158100802E47 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76021EEF1B33158100802E47 /* FBSDKCoreKit.framework */; };
 		76021EF51B3335BE00802E47 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76021EF41B3335BE00802E47 /* FBSDKLoginKit.framework */; };
 		76021EF71B3335CD00802E47 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76021EF61B3335CD00802E47 /* FBSDKShareKit.framework */; };
-		767BC9E11B337AE400B5F684 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767BC9E01B337AE400B5F684 /* ParseFacebookUtils.framework */; };
-		767BC9E31B337C0700B5F684 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767BC9E21B337C0600B5F684 /* ParseFacebookUtilsV4.framework */; };
+		768ED14D1B33854D0000C980 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768ED14B1B33854D0000C980 /* ParseFacebookUtils.framework */; };
+		76960D021B34605800EE76A6 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76960D011B34605800EE76A6 /* ParseFacebookUtilsV4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +77,8 @@
 		76021EF31B3322A100802E47 /* babblingTogether1-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "babblingTogether1-Bridging-Header.h"; sourceTree = "<group>"; };
 		76021EF41B3335BE00802E47 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		76021EF61B3335CD00802E47 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		767BC9E01B337AE400B5F684 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../../Downloads/parse sdk/parse-library-1.7.4/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
-		767BC9E21B337C0600B5F684 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../../Downloads/parse sdk/parse-library-1.7.4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		768ED14B1B33854D0000C980 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../../Downloads/parse sdk/parse-library-1.7.4/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		76960D011B34605800EE76A6 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../../Downloads/parse sdk/parse-library-1.7.4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				767BC9E31B337C0700B5F684 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				767BC9E11B337AE400B5F684 /* ParseFacebookUtils.framework in Frameworks */,
+				76960D021B34605800EE76A6 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				768ED14D1B33854D0000C980 /* ParseFacebookUtils.framework in Frameworks */,
 				76021EEE1B32FBF800802E47 /* libsqlite3.dylib in Frameworks */,
 				76021EF51B3335BE00802E47 /* FBSDKLoginKit.framework in Frameworks */,
 				76021EEC1B32FBC400802E47 /* libz.dylib in Frameworks */,
@@ -181,8 +181,8 @@
 		76021ED41B32F54E00802E47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				767BC9E21B337C0600B5F684 /* ParseFacebookUtilsV4.framework */,
-				767BC9E01B337AE400B5F684 /* ParseFacebookUtils.framework */,
+				76960D011B34605800EE76A6 /* ParseFacebookUtilsV4.framework */,
+				768ED14B1B33854D0000C980 /* ParseFacebookUtils.framework */,
 				76021EF61B3335CD00802E47 /* FBSDKShareKit.framework */,
 				76021EF41B3335BE00802E47 /* FBSDKLoginKit.framework */,
 				76021EEF1B33158100802E47 /* FBSDKCoreKit.framework */,
@@ -449,6 +449,10 @@
 					"sdk/parse-library-1.7.4",
 					/Users/macbookproretina/Downloads/parse,
 					"sdk/parse-library-1.7.4",
+					/Users/macbookproretina/Downloads/parse,
+					"sdk/parse-library-1.7.4",
+					/Users/macbookproretina/Downloads/parse,
+					"sdk/parse-library-1.7.4",
 				);
 				INFOPLIST_FILE = babblingTogether1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -467,6 +471,10 @@
 					/Users/macbookproretina/Downloads/parse,
 					"sdk/parse-library-1.7.4",
 					/Users/macbookproretina/Documents/FacebookSDK,
+					/Users/macbookproretina/Downloads/parse,
+					"sdk/parse-library-1.7.4",
+					/Users/macbookproretina/Downloads/parse,
+					"sdk/parse-library-1.7.4",
 					/Users/macbookproretina/Downloads/parse,
 					"sdk/parse-library-1.7.4",
 					/Users/macbookproretina/Downloads/parse,
