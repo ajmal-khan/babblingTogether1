@@ -13,6 +13,7 @@ import Foundation
 class LoginWiewController: UIViewController {
 
 
+    @IBOutlet weak var buttonResetPassword: UIButton!
     @IBOutlet weak var buttonLoginWithEmail: UIButton!
     @IBOutlet weak var buttonLogOut: UIButton!
     @IBOutlet weak var buttonSignUp: UIButton!
@@ -136,6 +137,12 @@ class LoginWiewController: UIViewController {
         }//@
         
     }//function buttonSignUpTapped ends here.
+    
+    
+    @IBAction func buttonResetPasswordTapped(sender: AnyObject) {
+        
+        PFUser.requestPasswordResetForEmail(self.emailTextField.text);
+    }
     
 }//class LoginWiewController ends here.
 

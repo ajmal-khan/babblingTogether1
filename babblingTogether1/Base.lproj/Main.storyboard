@@ -59,6 +59,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Error message if any" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zqr-FE-BpT">
+                                <rect key="frame" x="245" y="237" width="95" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="I0M-0y-cQG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57j-6E-yDD">
                                 <rect key="frame" x="30" y="30" width="65" height="30"/>
                                 <constraints>
@@ -85,15 +94,19 @@
                                     <action selector="buttonLoginWithEmailTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2JT-6X-29e"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Error message if any" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zqr-FE-BpT">
-                                <rect key="frame" x="245" y="237" width="95" height="23"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuV-oK-8Qz">
+                                <rect key="frame" x="446" y="30" width="112" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="I0M-0y-cQG"/>
+                                    <constraint firstAttribute="height" constant="30" id="EJc-32-E4l"/>
+                                    <constraint firstAttribute="width" constant="112" id="ppT-OM-haI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonResetPasswordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qx0-kf-rbh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -104,11 +117,13 @@
                             <constraint firstAttribute="trailing" secondItem="2zj-21-WyG" secondAttribute="trailing" constant="5" id="BgU-Lt-hzr"/>
                             <constraint firstAttribute="trailing" secondItem="pTE-Jw-UgG" secondAttribute="trailing" id="BoM-pG-mCg"/>
                             <constraint firstItem="pTE-Jw-UgG" firstAttribute="top" secondItem="C2P-h9-Oc2" secondAttribute="bottom" constant="20" id="LxY-0S-euL"/>
+                            <constraint firstItem="cuV-oK-8Qz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="MvK-kC-zXT"/>
                             <constraint firstItem="CS6-mI-lWE" firstAttribute="top" secondItem="2zj-21-WyG" secondAttribute="bottom" constant="15" id="OAJ-iM-ceK"/>
                             <constraint firstItem="C2P-h9-Oc2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="QgF-i8-jbm"/>
                             <constraint firstItem="IzX-S7-sDt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ShZ-OZ-w6s"/>
                             <constraint firstItem="IzX-S7-sDt" firstAttribute="top" secondItem="gmY-Ai-Z1v" secondAttribute="bottom" constant="10" id="Sry-Co-IS5"/>
                             <constraint firstItem="57j-6E-yDD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="Tye-Ix-el7"/>
+                            <constraint firstAttribute="trailing" secondItem="cuV-oK-8Qz" secondAttribute="trailing" constant="5" id="USL-JM-wSe"/>
                             <constraint firstItem="2zj-21-WyG" firstAttribute="top" secondItem="57j-6E-yDD" secondAttribute="bottom" constant="10" id="XlX-hm-f53"/>
                             <constraint firstAttribute="trailing" secondItem="gmY-Ai-Z1v" secondAttribute="trailing" constant="5" id="aaw-1j-ryP"/>
                             <constraint firstAttribute="trailing" secondItem="Zqr-FE-BpT" secondAttribute="trailing" constant="5" id="bvN-hx-opK"/>
@@ -124,6 +139,7 @@
                     <connections>
                         <outlet property="buttonLogOut" destination="57j-6E-yDD" id="NTZ-FI-N7X"/>
                         <outlet property="buttonLoginWithEmail" destination="gmY-Ai-Z1v" id="r60-55-Nsl"/>
+                        <outlet property="buttonResetPassword" destination="cuV-oK-8Qz" id="9BN-LN-VZG"/>
                         <outlet property="buttonSignUp" destination="IzX-S7-sDt" id="XXl-Ux-7A2"/>
                         <outlet property="emailTextField" destination="2zj-21-WyG" id="1ZQ-GU-YbR"/>
                         <outlet property="errorLabel" destination="Zqr-FE-BpT" id="4XB-dC-zIJ"/>
