@@ -116,7 +116,7 @@ class LoginWiewController: UIViewController {
         var newUser = PFUser();
         newUser.username = self.emailTextField.text;
         newUser.password = self.passwordTextField.text;
-        //newUser.email = self.emailTextField.text;
+        newUser.email = self.emailTextField.text;
         newUser.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error{
