@@ -140,9 +140,28 @@ class LoginWiewController: UIViewController {
     
     
     @IBAction func buttonResetPasswordTapped(sender: AnyObject) {
-        
-        PFUser.requestPasswordResetForEmail(self.emailTextField.text);
-    }
+        var email = "";
+        var currentUser = PFUser.currentUser();
+        if currentUser != nil{
+            email = currentUser!.email!;
+        }
+        else{
+            email = self.emailTextField.text;
+        }
+
+        if email == ""
+        {
+            self.errorLabel.hidden = false;
+            self.errorLabel.textColor = UIColor.redColor();
+            self.errorLabel.text = "Please enter your email address to reset your password.";
+        }
+        else{
+            PFUser.requestPasswordResetForEmail(email);
+            self.errorLabel.hidden = false;
+            self.errorLabel.textColor = UIColor.greenColor();
+            self.errorLabel.text = "Please check your email.";
+        }
+    }//function buttonResetPasswordTapped ends here.
     
 }//class LoginWiewController ends here.
 

@@ -32,8 +32,8 @@
 		76021EF01B33158100802E47 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76021EEF1B33158100802E47 /* FBSDKCoreKit.framework */; };
 		76021EF51B3335BE00802E47 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76021EF41B3335BE00802E47 /* FBSDKLoginKit.framework */; };
 		76021EF71B3335CD00802E47 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76021EF61B3335CD00802E47 /* FBSDKShareKit.framework */; };
+		765315201B34D9DF004C8057 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7653151F1B34D9DF004C8057 /* ParseFacebookUtilsV4.framework */; };
 		768ED14D1B33854D0000C980 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768ED14B1B33854D0000C980 /* ParseFacebookUtils.framework */; };
-		76960D021B34605800EE76A6 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76960D011B34605800EE76A6 /* ParseFacebookUtilsV4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +77,8 @@
 		76021EF31B3322A100802E47 /* babblingTogether1-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "babblingTogether1-Bridging-Header.h"; sourceTree = "<group>"; };
 		76021EF41B3335BE00802E47 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		76021EF61B3335CD00802E47 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		7653151F1B34D9DF004C8057 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../../Downloads/parse sdk/parse-library-1.7.4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		768ED14B1B33854D0000C980 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../../Downloads/parse sdk/parse-library-1.7.4/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
-		76960D011B34605800EE76A6 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../../Downloads/parse sdk/parse-library-1.7.4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76960D021B34605800EE76A6 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				765315201B34D9DF004C8057 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				768ED14D1B33854D0000C980 /* ParseFacebookUtils.framework in Frameworks */,
 				76021EEE1B32FBF800802E47 /* libsqlite3.dylib in Frameworks */,
 				76021EF51B3335BE00802E47 /* FBSDKLoginKit.framework in Frameworks */,
@@ -181,7 +181,7 @@
 		76021ED41B32F54E00802E47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				76960D011B34605800EE76A6 /* ParseFacebookUtilsV4.framework */,
+				7653151F1B34D9DF004C8057 /* ParseFacebookUtilsV4.framework */,
 				768ED14B1B33854D0000C980 /* ParseFacebookUtils.framework */,
 				76021EF61B3335CD00802E47 /* FBSDKShareKit.framework */,
 				76021EF41B3335BE00802E47 /* FBSDKLoginKit.framework */,
@@ -453,6 +453,9 @@
 					"sdk/parse-library-1.7.4",
 					/Users/macbookproretina/Downloads/parse,
 					"sdk/parse-library-1.7.4",
+					"$(PROJECT_DIR)",
+					/Users/macbookproretina/Downloads/parse,
+					"sdk/parse-library-1.7.4",
 				);
 				INFOPLIST_FILE = babblingTogether1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -479,6 +482,9 @@
 					"sdk/parse-library-1.7.4",
 					/Users/macbookproretina/Downloads/parse,
 					"sdk/parse-library-1.7.4",
+					/Users/macbookproretina/Downloads/parse,
+					"sdk/parse-library-1.7.4",
+					"$(PROJECT_DIR)",
 					/Users/macbookproretina/Downloads/parse,
 					"sdk/parse-library-1.7.4",
 				);
