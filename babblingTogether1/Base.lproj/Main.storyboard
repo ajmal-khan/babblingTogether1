@@ -144,11 +144,142 @@
                         <outlet property="emailTextField" destination="2zj-21-WyG" id="1ZQ-GU-YbR"/>
                         <outlet property="errorLabel" destination="Zqr-FE-BpT" id="4XB-dC-zIJ"/>
                         <outlet property="passwordTextField" destination="CS6-mI-lWE" id="FjB-DX-a23"/>
+                        <segue destination="Ov8-qA-rWf" kind="presentation" identifier="moveToBabblesList" id="rKe-wP-1Ho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="346"/>
+            <point key="canvasLocation" x="-480" y="198"/>
+        </scene>
+        <!--Babbles List View Controller-->
+        <scene sceneID="A11-tt-15v">
+            <objects>
+                <viewController id="Ov8-qA-rWf" customClass="BabblesListViewController" customModule="babblingTogether1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uNS-00-Ljl"/>
+                        <viewControllerLayoutGuide type="bottom" id="VGt-tp-gaY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fch-Yn-KHL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7s-Lz-DWA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="l16-xW-bs7"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="List of Babbles" id="dZC-5o-Vx8">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tpr-bL-2K9">
+                                            <connections>
+                                                <action selector="buttonLogoutTapped:" destination="Ov8-qA-rWf" id="fVB-yX-ygL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Record" id="cAT-nF-A1L">
+                                            <connections>
+                                                <segue destination="tL6-bc-9aU" kind="presentation" id="8t6-aR-Azf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n7s-Lz-DWA" firstAttribute="leading" secondItem="fch-Yn-KHL" secondAttribute="leading" id="0WO-Qt-L9f"/>
+                            <constraint firstItem="n7s-Lz-DWA" firstAttribute="top" secondItem="fch-Yn-KHL" secondAttribute="top" id="9s6-er-5J9"/>
+                            <constraint firstAttribute="trailing" secondItem="n7s-Lz-DWA" secondAttribute="trailing" id="ewO-x5-fW2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1e-X9-y4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211" y="198"/>
+        </scene>
+        <!--New Babble View Controller-->
+        <scene sceneID="PoY-ed-Td1">
+            <objects>
+                <viewController id="tL6-bc-9aU" customClass="NewBabbleViewController" customModule="babblingTogether1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6p8-yI-ehK"/>
+                        <viewControllerLayoutGuide type="bottom" id="nUZ-Yl-3og"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2aV-2J-PyN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNb-Ga-qd9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Klu-fT-TWW"/>
+                                    <constraint firstAttribute="height" constant="64" id="beI-GK-Ib2"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="New Babble" id="bg6-QN-BEf">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Gx3-op-eBY">
+                                            <connections>
+                                                <action selector="buttonCancelTapped:" destination="tL6-bc-9aU" id="N7c-IE-EhX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kuv-PM-Dxt">
+                                            <connections>
+                                                <action selector="buttonSaveTapped:" destination="tL6-bc-9aU" id="9Gg-ge-0dp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-xa-TvZ">
+                                <rect key="frame" x="217.5" y="114" width="165" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wVP-pH-Yix"/>
+                                    <constraint firstAttribute="width" constant="165" id="xzl-lN-ftH"/>
+                                </constraints>
+                                <state key="normal" title="Record an audio babble">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonRecordAudioTapped:" destination="tL6-bc-9aU" eventType="touchUpInside" id="WA4-HP-f1t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oa0-bS-hQo">
+                                <rect key="frame" x="285" y="184" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4eE-Sn-zsF"/>
+                                    <constraint firstAttribute="width" constant="30" id="nOd-9X-VOy"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPlayTapped:" destination="tL6-bc-9aU" eventType="touchUpInside" id="0D5-m0-2PT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iNb-Ga-qd9" firstAttribute="leading" secondItem="2aV-2J-PyN" secondAttribute="leading" id="NFD-Ff-KUZ"/>
+                            <constraint firstItem="Oa0-bS-hQo" firstAttribute="top" secondItem="5Vd-xa-TvZ" secondAttribute="bottom" constant="40" id="Wkp-le-85E"/>
+                            <constraint firstItem="iNb-Ga-qd9" firstAttribute="top" secondItem="2aV-2J-PyN" secondAttribute="top" id="aSf-8x-ABp"/>
+                            <constraint firstAttribute="trailing" secondItem="iNb-Ga-qd9" secondAttribute="trailing" id="b5a-U6-Kdr"/>
+                            <constraint firstAttribute="centerX" secondItem="Oa0-bS-hQo" secondAttribute="centerX" id="bF2-Ut-Asg"/>
+                            <constraint firstItem="5Vd-xa-TvZ" firstAttribute="top" secondItem="iNb-Ga-qd9" secondAttribute="bottom" constant="50" id="iJg-s8-LYj"/>
+                            <constraint firstItem="iNb-Ga-qd9" firstAttribute="top" secondItem="2aV-2J-PyN" secondAttribute="top" id="iyL-s1-hGW"/>
+                            <constraint firstAttribute="trailing" secondItem="iNb-Ga-qd9" secondAttribute="trailing" id="lFq-ph-V6c"/>
+                            <constraint firstAttribute="centerX" secondItem="5Vd-xa-TvZ" secondAttribute="centerX" id="qul-bQ-BDA"/>
+                            <constraint firstAttribute="centerX" secondItem="5Vd-xa-TvZ" secondAttribute="centerX" id="tWz-Er-rzo"/>
+                            <constraint firstItem="iNb-Ga-qd9" firstAttribute="leading" secondItem="2aV-2J-PyN" secondAttribute="leading" id="vqr-Kb-FIB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonPlay" destination="Oa0-bS-hQo" id="gmI-EW-l2A"/>
+                        <outlet property="buttonRecord" destination="5Vd-xa-TvZ" id="rr2-HH-XYy"/>
+                        <outlet property="buttonSave" destination="kuv-PM-Dxt" id="Ysb-bz-0YE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUR-rR-CA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768" y="290"/>
         </scene>
     </scenes>
 </document>

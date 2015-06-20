@@ -37,14 +37,15 @@ class LoginWiewController: UIViewController {
         var currentUser = PFUser.currentUser();
         if currentUser != nil{
             // Let the user go on to the next view controller.
-            self.errorLabel.hidden = false;
-            self.errorLabel.textColor = UIColor.purpleColor();
-            self.errorLabel.text = "You are already logged in on this device.";
-            self.buttonLoginWithEmail.hidden = true;
-            self.buttonSignUp.hidden = true;
-            self.emailTextField.hidden = true;
-            self.passwordTextField.hidden = true;
-            self.buttonLogOut.hidden = false;
+            self.performSegueWithIdentifier("moveToBabblesList", sender: self);
+            //self.errorLabel.hidden = false;
+            //self.errorLabel.textColor = UIColor.purpleColor();
+            //self.errorLabel.text = "You are already logged in on this device.";
+            //self.buttonLoginWithEmail.hidden = true;
+            //self.buttonSignUp.hidden = true;
+            //self.emailTextField.hidden = true;
+            //self.passwordTextField.hidden = true;
+            //self.buttonLogOut.hidden = false;
         }
         else{
             //Show the sign up or log in screen.
@@ -60,6 +61,10 @@ class LoginWiewController: UIViewController {
         
     }//function doStartUpWork ends here
     
+    override func viewWillAppear(animated: Bool) {
+        self.errorLabel.hidden = true;
+        self.buttonLogOut.hidden = true;
+    }
     
     @IBAction func buttonLogOutTapped(sender: AnyObject) {
         PFUser.logOut();
@@ -77,18 +82,19 @@ class LoginWiewController: UIViewController {
             if user != nil{
                 self.errorLabel.hidden = false;
                 self.errorLabel.textColor = UIColor.blueColor();
-                self.errorLabel.text = "You have been logged in!";
-                self.buttonLoginWithEmail.hidden = true;
-                self.buttonLogOut.hidden = false;
-                self.buttonSignUp.hidden = true;
-                self.emailTextField.text = "";
-                self.emailTextField.hidden = true;
-                self.passwordTextField.text = "";
-                self.passwordTextField.hidden = true;
+                self.performSegueWithIdentifier("moveToBabblesList", sender: self);
+                //self.errorLabel.text = "You have been logged in!";
+                //self.buttonLoginWithEmail.hidden = true;
+                //self.buttonLogOut.hidden = false;
+                //self.buttonSignUp.hidden = true;
+                //self.emailTextField.text = "";
+                //self.emailTextField.hidden = true;
+                //self.passwordTextField.text = "";
+                //self.passwordTextField.hidden = true;
             } else {
                 self.errorLabel.hidden = false;
                 self.errorLabel.textColor = UIColor.redColor();
-                self.errorLabel.text = "Either your password or email is not correct!";
+                self.errorLabel.text = "Something went wrong!";
             }
         }
     }//function buttonLoginWithEmailTapped ends here.
@@ -102,10 +108,13 @@ class LoginWiewController: UIViewController {
             if let user = user {
                 if user.isNew {
                     //println("User signed up and logged in with Twitter!")
+                    self.performSegueWithIdentifier("moveToBabblesList", sender: self);
                 } else {
                     //println("User logged in with Twitter!")
+                    self.performSegueWithIdentifier("moveToBabblesList", sender: self);
                 }
             } else {
+                println(error);
                 //println("Uh oh. The user cancelled the Twitter login.")
             }
         }
@@ -130,7 +139,8 @@ class LoginWiewController: UIViewController {
             } else{
                 self.errorLabel.hidden = false;
                 self.errorLabel.textColor = UIColor.greenColor();
-                self.errorLabel.text = "Congritualtions! You can use the app now!";
+                self.performSegueWithIdentifier("moveToBabblesList", sender: self);
+                //self.errorLabel.text = "Congritualtions! You can use the app now!";
                 //println("You have successfully signed up. An account was made for you.");
                 //Success, let them use the app now! Let them go to the next navigation controller.
             }
