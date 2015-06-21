@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>0EDF77B1-802E-4374-B382-1AAD0B9B3065</string>
 	<key>IDESourceControlProjectName</key>
-	<string>babblingTogether1</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1B98D2B2137B245C7831E96C1623F58235CDCEDD</key>
 		<string>https://github.com/ajmal-khan/babblingTogether1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>babblingTogether1.xcodeproj</string>
+	<string>babblingTogether1.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1B98D2B2137B245C7831E96C1623F58235CDCEDD</key>

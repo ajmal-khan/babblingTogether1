@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import CoreData
+import Parse
 
 class NewBabbleViewController: UIViewController {
 
@@ -182,11 +183,33 @@ class NewBabbleViewController: UIViewController {
     
     @IBAction func buttonSaveTapped(sender: AnyObject) {
         
+        //Make PFFile
+        var audioData = NSFileManager.defaultManager().contentsAtPath(self.audioURL.path!);
+        var audioFile = PFFile(data: audioData!);
         
+        //Make Sound PFObjekt
+        //This app contains sound objects stored at the servers of Parse.com. So we will createa a Sound 
+        //class at the Parse serers using the code below.
+        var myBabbleObject = PFObject(className: "Babble");
+        myBabbleObject.setObject(PFUser.currentUser()!, forKey: "User");
+        myBabbleObject.setObject(audioFile, forKey: "Audio");
         
-        //Now that we have saved the sound, we have to go back to the list of babbles.
-        self.dismissViewControllerAnimated(true, completion: nil);
-    }
+        //Upload the sound recorded to the website of Parse.com
+        myBabbleObject.saveInBackgroundWithBlock { (Bool saved, NSError error) -> Void in
+            if saved{
+                self.displayTimeLabel.enabled = true;
+                self.displayTimeLabel.textColor = UIColor.greenColor();
+                self.displayTimeLabel.text = "Audio Saved";
+                //Now that we have saved the sound, we have to go back to the list of babbles.
+                self.dismissViewControllerAnimated(true, completion: nil);
+            }else{
+                self.displayTimeLabel.enabled = true;
+                self.displayTimeLabel.textColor = UIColor.redColor();
+                self.displayTimeLabel.text = "Audio NOT Saved";
+            }
+        }
+
+    }//function buttonSaveTapped ends here.
     
     //***********************************************************************
     // Timer related code
