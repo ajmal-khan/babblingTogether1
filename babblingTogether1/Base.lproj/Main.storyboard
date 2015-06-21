@@ -163,6 +163,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ngL-i7-q9Z">
+                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7s-Lz-DWA">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <constraints>
@@ -188,9 +192,16 @@
                         <constraints>
                             <constraint firstItem="n7s-Lz-DWA" firstAttribute="leading" secondItem="fch-Yn-KHL" secondAttribute="leading" id="0WO-Qt-L9f"/>
                             <constraint firstItem="n7s-Lz-DWA" firstAttribute="top" secondItem="fch-Yn-KHL" secondAttribute="top" id="9s6-er-5J9"/>
+                            <constraint firstItem="ngL-i7-q9Z" firstAttribute="top" secondItem="n7s-Lz-DWA" secondAttribute="bottom" id="FUP-i4-4fz"/>
+                            <constraint firstAttribute="bottom" secondItem="ngL-i7-q9Z" secondAttribute="bottom" id="GSz-4v-gI5"/>
+                            <constraint firstAttribute="trailing" secondItem="ngL-i7-q9Z" secondAttribute="trailing" id="P6J-9A-YBl"/>
                             <constraint firstAttribute="trailing" secondItem="n7s-Lz-DWA" secondAttribute="trailing" id="ewO-x5-fW2"/>
+                            <constraint firstItem="ngL-i7-q9Z" firstAttribute="leading" secondItem="fch-Yn-KHL" secondAttribute="leading" id="n4e-1c-Wcg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ngL-i7-q9Z" id="9YC-Nv-ZJF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1e-X9-y4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
